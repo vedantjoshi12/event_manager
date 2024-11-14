@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<h2 class="mb-4">{{ form.instance.pk|yesno:"Edit Event,Create Event" }}</h2>
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.title.label_tag }}
+                {{ form.title|add_class:"form-control" }}
+            </div>
+            <div class="mb-3">
+                {{ form.date.label_tag }}
+                {{ form.date|add_class:"form-control" }}
+            </div>
+            <div class="mb-3">
+                {{ form.location.label_tag }}
+                {{ form.location|add_class:"form-control" }}
+            </div>
+            <div class="mb-3">
+                {{ form.description.label_tag }}
+                {{ form.description|add_class:"form-control" }}
+            </div>
+            <button type="submit" class="btn btn-success">Save</button>
+            <a href="{% url 'event_list' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
