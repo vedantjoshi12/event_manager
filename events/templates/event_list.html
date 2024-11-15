@@ -8,7 +8,7 @@
         <div class="card shadow-sm">
             <div class="card-body">
                 <h5 class="card-title">{{ event.title }}</h5>
-                <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
+                <p class="card-text"><strong>Date & Time :</strong> {{ event.date }}</p>
                 <p class="card-text"><strong>Location:</strong> {{ event.location }}</p>
                 <a href="{% url 'event_detail' event.pk %}" class="btn btn-primary">View Details</a>
                 <a href="{% url 'event_update' event.pk %}" class="btn btn-warning">Edit</a>
